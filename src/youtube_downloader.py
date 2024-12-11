@@ -44,4 +44,7 @@ def download_audio(video_url, output_path):
     else:
         print(f"Failed to download file to: {full_output_path}")
 
-    return audio_filename
+    return {
+        "title": video_title,
+        "filename": audio_filename,
+    }

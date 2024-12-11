@@ -28,9 +28,9 @@ def transcribe(url: YoutubeUrl):
         transcript_dir = "./data/transcripts"
 
         print("Downloading audio...")
-        audio_filename = download_audio(video_url, audio_path)
+        audio_data = download_audio(video_url, audio_path)
 
-        full_audio_path = os.path.join(audio_path, audio_filename)
+        full_audio_path = os.path.join(audio_path, audio_data["filename"])
 
         print(f"Full audio path: {full_audio_path}")
         if not os.path.isfile(full_audio_path):
@@ -39,7 +39,7 @@ def transcribe(url: YoutubeUrl):
         print("Transcribing audio...")
         transcription_result = transcribe_audio(full_audio_path)
 
-        filename_no_ext = os.path.splitext(audio_filename)[0]
+        filename_no_ext = os.path.splitext(audio_data["filename"])[0]
         write_results(transcription_result, transcript_dir, filename_no_ext)
 
         segments = process_whisper_segments(transcription_result["segments"])
@@ -50,7 +50,7 @@ def transcribe(url: YoutubeUrl):
 
         return {
             "message": "Transcription successful",
-            "video_title": filename_no_ext,
+            "video_title": audio_data["title"],
             "segments": combined_transcript,
         }
     except BaseException as e:
