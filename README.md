@@ -16,8 +16,7 @@ This is a Proof of Concept (PoC) application that transcribes the audio of YouTu
 ## Installation
 
 ### Prerequisites
-- Python 3.9 or higher
-- [Poetry](https://python-poetry.org/): Dependency management tool
+- Docker installed on your system
 
 ### Steps
 1. Clone the repository:
@@ -26,24 +25,23 @@ This is a Proof of Concept (PoC) application that transcribes the audio of YouTu
    cd set-python-final-project
    ```
 
-2. Install dependencies:
-   ```bash
-   poetry install
-   ```
-
-3. Activate the virtual environment:
-   ```bash
-   poetry shell
-   ```
-
 ## Usage
 
-### Running the API Server
-Start the FastAPI development server:
-```bash
-fastapi dev
-```
-The server will start at `http://127.0.0.1:8000` by default.
+### Running the API Server with Docker
+
+#### Steps:
+1. Build the Docker image:
+   ```bash
+   docker build -t youtube-transcript-service .
+   ```
+
+2. Run the container:
+   ```bash
+   docker run -p 8000:8000 youtube-transcript-service
+   ```
+
+3. Access the API:
+   The server will be accessible at `http://127.0.0.1:8000`.
 
 ### Endpoints
 
