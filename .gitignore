@@ -1,0 +1,75 @@
+# Dependency directories
+node_modules/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Editor directories
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# Swap files from editors
+*.swp
+*~
+.lock
+
+# Build outputs
+dist/
+build/
+out/
+
+# Logs
+*.log
+
+# Environment files
+.env
+.env.local
+.env.*  # Covers all environments
+
+# Coverage directories
+coverage/
+
+# Lock files
+yarn.lock
+package-lock.json
+pnpm-lock.yaml
+
+# Optional: Exclude specific configuration files or scripts
+scripts/
+config/
+
+
+# Bytecode
+__pycache__/
+*.pyc
+
+# Virtual environments
+venv/
+.venv/
+
+# Packaging artifacts
+build/
+dist/
+*.egg-info/
+*.egg
+
+# Jupyter Notebooks
+.ipynb_checkpoints/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Logs and databases
+*.log
+*.csv
+*.sqlite
+
+# Environment variables
+.env
+
+# Data
+data/
